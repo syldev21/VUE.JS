@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+</head>
+<body>
+    <div id="app">
+        <a :href="home">Home</a>|<a :href="employee_information">Employee Information</a>
+        <h1>Vue JS for Absolute Beginners</h1>
+        <br>
+        <button @click="toggleShowBoxes">
+            <span v-if="!showEventBoxes">Show Event Boxes</span>
+            <span v-else>Hide Event Boxes</span>
+        </button>
+        <div v-if="showEventBoxes">
+            <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+            <div class="box" @mouseleave="handleEvent">mouseleave</div>
+            <div class="box" @dblclick="handleEvent">double click</div>
+            <div class="box" @mousemove="handleMouseMoveEvent">Position {{x}} {{y}}</div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

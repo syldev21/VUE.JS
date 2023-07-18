@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylnet Employees</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <div id="app" class="employees_page">
+        <a :href="home">Home</a> | <a :href="events">Events</a>
+        <h1>Vue JS for Absolute Beginners</h1>
+        <button @click="toggleShowEmployeeInformation">
+            <span v-if="!showDetails">Show {{emp_info_summary}}</span>
+            <span v-else>Hide {{emp_info_summary}}</span>
+        </button>
+        <ul v-if="showDetails">
+            <li class="heading-list">
+                <h1>Photo</h1>
+                <h1>Name</h1>
+                <h1>Title</h1>
+                <h1>Salary</h1>
+            </li>
+            <li v-for="employee in employees" :class="{manager: employee.isManager}" @click="toglleIsManager(employee)">
+            <!-- <li v-for="employee in managersOnly" :class="{manager: employee.isManager}" @click="toglleIsManager(employee)"> -->
+                <img :src="employee.img" alt="employee.name"  class="employee-img">
+                
+                <h3>{{employee.name}}</h3>
+                <p>{{employee.title}}</p>
+                <p>{{employee.salary}}</p>
+            </li>
+        </ul>
+        <p v-show="showDetails">Curently Showing Employee Information</p>
+        <br/>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

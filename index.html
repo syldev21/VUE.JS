@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Directory - Home</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+</head>
+<body>
+    
+    <div id="app">
+        <a :href="employee_information">Employee Information</a>|<a :href="events">Events</a> | <a :href="url">Google</a> 
+        <h1>Vue JS for Absolute Beginners</h1>
+        <p v-if="showDescription">{{description}}</p>
+            <button @click="toggleShowDescription">
+                <span v-if="showDescription">Hide Description</span>
+                <span v-else>Show Description</span>
+            </button>
+            <div v-show="showDescription">Currently Showing Description</div>
+
+        
+        <p>{{name}} -{{title}} - {{salary}}</p>
+        <div v-if="salary !== 0 && showDetails">
+            <button v-on:click="salary += 10000">Increase Salary</button>
+            <button v-on:click="salary -= 10000">Decrease Salary</button>
+          </div>
+          <div v-else>
+            <button id="toggleShow" @click="toggleShowDetails">Show Details</button>
+          </div>          
+        <div @click="name='Maurice Owinyo', title='Assistant Manager DevOpps', salary=150000">Change Staff Details</div>
+        <button @click="changeThroughParams('Brian Muthura', 'IT Manager', 350000)">Change by Passing Data Back to Vue</button>
+        <div @click="changeDetails">Adjust Staff Details</div>
+        <img @click="resetStaffDetails" src="assets/sylvester.jpeg" style="width: 100px;">
+        <br/>
+        <br/>
+        <!-- <button @click="toggleShowEmployeeInformation">
+            <span v-if="!showDetails">Show Employee Information</span>
+            <span v-else>Hide Employee Information</span>
+        </button>
+        <ul v-if="showDetails">
+            <li v-for="employee in employees">
+                <h3>{{employee.name}}</h3>
+                <p>Title: {{employee.title}}</p>
+                <p>Salary: {{employee.salary}}</p>
+            </li>
+        </ul>
+        <p v-show="showDetails">Curently Showing Employee Information</p>
+        <br/>
+        <br/>
+        <button @click="toggleShowBoxes">
+            <span v-if="!showEventBoxes">Show Event Boxes</span>
+            <span v-else>Hide Event Boxes</span>
+        </button>
+        <div v-if="showEventBoxes">
+            <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+            <div class="box" @mouseleave="handleEvent">mouseleave</div>
+            <div class="box" @dblclick="handleEvent">double click</div>
+            <div class="box" @mousemove="handleMouseMoveEvent">Position {{x}} {{y}}</div>
+        </div> -->
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.box {
+    padding: 100px 0;
+    width: 400px;
+    text-align: center;
+    background: #ddd;
+    margin: 20px;
+    display: inline-block;
+}
+.employee-img {
+    max-width: 100px; /* Adjust the width as per your requirement */
+    max-height: 100px; /* Adjust the height as per your requirement */
+}
+body{
+    background-color: #eee;
+    max-width: 960px;
+    margin: 20px auto;
+}
+p,h3, ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+    background: #fff;
+    padding: 20px auto;
+    border-radius: 10px;
+    border: 1px solid orangered; /* Add a visible border */
+    /* margin-bottom: 1px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.manager{
+    background-color: #ff9ed2;
+    color: white;
+}
+.heading-list {
+            background-color: lightblue; /* Unique styling for heading row */
+            color: white;
+            font-weight: bold;
+}
